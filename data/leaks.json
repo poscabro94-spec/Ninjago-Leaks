@@ -1,15 +1,323 @@
 {
-  "updated": "2026-10-09T07:00:00+00:00",
+  "updated": "2026-10-09T07:31:46+00:00",
   "items": [
+    {
+      "title": "Ninjago: 71973 Cole vs Evil Cole and 71875 Lloyd vs Ras Spinner sets (images from lite) Jan 1",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1wumqvk/ninjago_71973_cole_vs_evil_cole_and_71875_lloyd/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/itsjustajoe [link] [comments]",
+      "set_numbers": [
+        "71875",
+        "71973"
+      ],
+      "published": "2026-10-01T01:34:14+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Ninjago: Images of 71888 Ivo’s Ninja Dojo and 71883 Destiny’s Bounty (kai_ninja73 on insta) Jan 1",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1wssa9c/ninjago_images_of_71888_ivos_ninja_dojo_and_71883/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/itsjustajoe [link] [comments]",
+      "set_numbers": [
+        "71883",
+        "71888"
+      ],
+      "published": "2026-09-28T21:59:37+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "CMF: Collectible Minifigures series 30 (via /u/MrCringemaster)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1wozd2z/cmf_collectible_minifigures_series_30_via/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/General_Durian_1013 [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-09-24T11:42:44+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Ninjago January(?) 2027 set details (Source: BuggyLeaks)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1vlxbd1/ninjago_january_2027_set_details_source_buggyleaks/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/General_Durian_1013 [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-08-11T23:16:24+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Ninjago: More Jan 2027 Set Names (from Unibricks)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1v14jkz/ninjago_more_jan_2027_set_names_from_unibricks/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/itsjustajoe [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-07-19T23:04:22+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "CMF: Info on series 30 (71054) of the Collectible Minifigures (via Fanklockow)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1ufg4po/cmf_info_on_series_30_71054_of_the_collectible/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "Original source: https://fanklockow.pl/2026/06/24/zapowiedzi-lego-2026-minifigurki/ submitted by /u/BrickTap [link] [comments]",
+      "set_numbers": [
+        "71054"
+      ],
+      "published": "2026-06-25T17:11:22+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
     {
       "title": "LEGO NINJAGO January 2027 set names rumoured",
       "url": "https://www.brickfanatics.com/lego-ninjago-january-2027-set-names-rumoured",
       "source": "Brick Fanatics",
       "tag": "rumour",
       "summary": "Rumoured January 2027 wave from Lite (via BrickTap on Reddit): transforming vehicles, spinner sets, and Ras returning. Four sets at $84.99 and two at $149.99.",
-      "set_numbers": ["71873", "71875", "71876", "71877", "71879", "71880", "71881", "71882", "71883", "71889"],
+      "set_numbers": [
+        "71873",
+        "71875",
+        "71876",
+        "71877",
+        "71879",
+        "71880",
+        "71881",
+        "71882",
+        "71883",
+        "71889"
+      ],
       "published": "2026-06-14T15:34:40+00:00",
       "first_seen": "2026-10-09T07:00:00+00:00"
+    },
+    {
+      "title": "Ninjago: Rumored January 2027 wave (via Lite)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1u4zb0q/ninjago_rumored_january_2027_wave_via_lite/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/BrickTap [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-06-13T19:06:32+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Ninjago Visual Dictionary character is Zane, and 30718 Cataclaws Polybag (official reveals)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1t1ghhi/ninjago_visual_dictionary_character_is_zane_and/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/BrickTap [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-05-02T05:05:00+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Ninjago: 71872 Ultra Dragon Battle (Source: FNAC)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1t05uy3/ninjago_71872_ultra_dragon_battle_source_fnac/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/General_Durian_1013 [link] [comments]",
+      "set_numbers": [
+        "71872"
+      ],
+      "published": "2026-04-30T19:10:48+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Ninjago: 71869 Land Bounty (via Lite)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1szt1n6/ninjago_71869_land_bounty_via_lite/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/General_Durian_1013 [link] [comments]",
+      "set_numbers": [
+        "71869"
+      ],
+      "published": "2026-04-30T11:13:34+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Ninjago: Higher Quality pics of some summer sets (from public.gr)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1spz582/ninjago_higher_quality_pics_of_some_summer_sets/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/itsjustajoe [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-04-19T17:24:22+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Ninjago: Summer set images (from mastersofbrickjitzu video)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1sm7a6g/ninjago_summer_set_images_from/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/itsjustajoe [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-04-15T14:12:46+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Various City, Ninjago, Minecraft, Creator, Friends and Technic summer 2026 sets (via anonymous post on 4chan, then verified)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1sghptl/various_city_ninjago_minecraft_creator_friends/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/BrickTap [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-04-09T06:25:09+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Ninjago: Legends - 71870 Twin Titan Mechs (from lite) June 1/Aug 1 North America",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1sbw2u6/ninjago_legends_71870_twin_titan_mechs_from_lite/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/itsjustajoe [link] [comments]",
+      "set_numbers": [
+        "71870"
+      ],
+      "published": "2026-04-04T01:33:18+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Ninjago: 71868 Wyldfyre’s Transforming Dragon Mech (from unibricks) June 1/Aug 1 North America",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1sbm6q4/ninjago_71868_wyldfyres_transforming_dragon_mech/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "821 pieces, $90 submitted by /u/itsjustajoe [link] [comments]",
+      "set_numbers": [
+        "71868"
+      ],
+      "published": "2026-04-03T18:49:02+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "40890 Easter Decorations (source: @ninjago_snsjaco)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1rctspg/40890_easter_decorations_source_ninjago_snsjaco/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/_Levitated_Shield_ [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-02-23T20:59:45+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "40916 Floral Picture Frame (source: @ninjago_snsjaco)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1rcsags/40916_floral_picture_frame_source_ninjago_snsjaco/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/_Levitated_Shield_ [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-02-23T20:06:08+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Creator: 40885 Duck Family Gift-With-Purchase image",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1qwyoha/creator_40885_duck_family_giftwithpurchase_image/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "Feb 16 - 24, $100 usd spend requirement submitted by /u/itsjustajoe [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-02-05T21:44:58+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Ninjago Summer 2026 prices / Source: lego_minecraft_goat",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1qmr6hc/ninjago_summer_2026_prices_source_lego_minecraft/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/Waltuhhhhhhhhhh [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-01-25T18:33:02+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "More 2026 set names and details, via fanklockow.pl",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1q8hlfd/more_2026_set_names_and_details_via_fanklockowpl/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "Correction: Faniklockow, not fanklockow Source These match up with the list from pure-gaming.fr, I think it is very likely they were able to get more info from there. I would not take this as 100% confirmed as fact, for example they had the Tram down as 60500 despite that being t",
+      "set_numbers": [
+        "71862",
+        "71863",
+        "71864",
+        "71867",
+        "71868",
+        "71869",
+        "71870",
+        "71871",
+        "71872"
+      ],
+      "published": "2026-01-09T19:22:06+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Lots of new 2026 set names have leaked thanks to pure-gaming.fr. Here is the full list",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1q6q1zv/lots_of_new_2026_set_names_have_leaked_thanks_to/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "This is not everything coming for the year. If it’s not on the list, that doesn’t mean it’s not coming anymore. It’s the full list from pure-gaming.fr, not the full list for the year Architecture 21066 New York 21067 Tower Bridge Botanicals 11511 Water Lily Ideas 21368 Snoopy 213",
+      "set_numbers": [
+        "71867",
+        "71869"
+      ],
+      "published": "2026-01-07T20:05:32+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Media: Ninjago Board Game: Destiny’s Bounty Adventures (with exclusive Nya) (official reveal)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1q4qdx2/media_ninjago_board_game_destinys_bounty/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/BrickTap [link] [comments]",
+      "set_numbers": [],
+      "published": "2026-01-05T16:31:47+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Every LEGO set releasing in January 2026 (including retirement dates)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1pz5yei/every_lego_set_releasing_in_january_2026/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "--> FULL LIST ON GOOGLE SHEETS, WITH LEGO.COM LINKS The promo calendar has also been updated for January Theme Subtheme Set # Set Name Age Piece Count Retirement Notes: (Exclusivity, release, etc.) (WIP) Gift With Purchase Holiday 40779 Year of the Horse 8+ 133 GWP Free with TBA ",
+      "set_numbers": [
+        "71051",
+        "71508",
+        "71512",
+        "71513",
+        "71514",
+        "71515",
+        "71849",
+        "71850",
+        "71851",
+        "71854",
+        "71855",
+        "71856",
+        "71857",
+        "71858",
+        "71859",
+        "71861",
+        "71866"
+      ],
+      "published": "2025-12-30T02:31:22+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "Piece counts for various waves for Superheroes, Star Wars, Jurassic, Ninjago, Icons, and City (via unibricks)",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1psl3w4/piece_counts_for_various_waves_for_superheroes/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "submitted by /u/BrickTap [link] [comments]",
+      "set_numbers": [],
+      "published": "2025-12-22T00:05:40+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
+    },
+    {
+      "title": "CMF: From what I understand, CMF Series 29 is a normal CMF series. I would not expect every fig to be a throwback.",
+      "url": "https://www.reddit.com/r/Legoleak/comments/1pms6ai/cmf_from_what_i_understand_cmf_series_29_is_a/",
+      "source": "r/Legoleak",
+      "tag": "rumour",
+      "summary": "Tahu and Lloyd got rumored first because of Bionicle and Ninjago fans. The color thing was just Lego_minecraft_goat goofing around. The other figs in the series should be the type of figs you see in a normal series. This series releases in May 2026. submitted by /u/BrickTap [link",
+      "set_numbers": [],
+      "published": "2025-12-14T23:21:19+00:00",
+      "first_seen": "2026-10-09T07:31:46+00:00"
     }
   ]
 }

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ninjago Leak Feed</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #181b22;
+    --line: #272b35;
+    --text: #eceef3;
+    --muted: #9aa1b2;
+    --accent: #ff4d3d;
+    --rumour: #f5a623;
+    --official: #3ecf8e;
+    --news: #5aa9ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+  header h1 { margin: 0; font-size: 1.9rem; letter-spacing: -0.02em; }
+  header h1 span { color: var(--accent); }
+  header p { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
+
+  .controls { margin: 22px 0 14px; display: flex; flex-direction: column; gap: 12px; }
+  #search {
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--text);
+    font: inherit;
+  }
+  #search:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--muted);
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.88rem;
+  }
+  .chip[aria-pressed="true"] { color: var(--text); border-color: var(--accent); background: #2a1715; }
+
+  .count { color: var(--muted); font-size: 0.85rem; margin: 0 0 12px; }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--muted); }
+  .tag {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    font-size: 0.68rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1px solid currentColor;
+  }
+  .tag.rumour { color: var(--rumour); }
+  .tag.official { color: var(--official); }
+  .tag.news { color: var(--news); }
+  .new {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.68rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .item h2 { margin: 8px 0 4px; font-size: 1.05rem; line-height: 1.35; }
+  .item h2 a { color: var(--text); text-decoration: none; }
+  .item h2 a:hover { text-decoration: underline; }
+  .item p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+  .sets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .set {
+    font-variant-numeric: tabular-nums;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: #222733;
+    color: var(--text);
+  }
+  .empty, .error { text-align: center; color: var(--muted); padding: 40px 0; }
+  footer { margin-top: 32px; color: var(--muted); font-size: 0.78rem; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Ninjago <span>Leak</span> Feed</h1>
+    <p id="updated">Loading...</p>
+  </header>
+
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search leaks, set names or set numbers (e.g. 71877, dragon)" autocomplete="off">
+    <div class="chips" id="chips">
+      <button class="chip" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" data-filter="rumour" aria-pressed="false">Rumours</button>
+      <button class="chip" data-filter="official" aria-pressed="false">Official</button>
+      <button class="chip" data-filter="news" aria-pressed="false">News</button>
+    </div>
+  </div>
+
+  <p class="count" id="count"></p>
+  <main id="list"></main>
+
+  <footer>
+    Rumours are unconfirmed and can be wrong. Nothing here is official unless it says Official.
+  </footer>
+</div>
+
+<script>
+(function () {
+  var NEW_HOURS = 48;
+  var state = { items: [], filter: "all", query: "" };
+
+  var listEl = document.getElementById("list");
+  var countEl = document.getElementById("count");
+  var updatedEl = document.getElementById("updated");
+
+  function ago(iso) {
+    var then = new Date(iso).getTime();
+    if (isNaN(then)) return "";
+    var mins = Math.max(1, Math.round((Date.now() - then) / 60000));
+    if (mins < 60) return mins + " min ago";
+    var hours = Math.round(mins / 60);
+    if (hours < 48) return hours + " h ago";
+    var days = Math.round(hours / 24);
+    if (days < 60) return days + " days ago";
+    return new Date(iso).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+  }
+
+  function isNew(item) {
+    var seen = new Date(item.first_seen).getTime();
+    return !isNaN(seen) && Date.now() - seen < NEW_HOURS * 3600 * 1000;
+  }
+
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  function safeUrl(url) {
+    return /^https?:\/\//i.test(url) ? url : "#";
+  }
+
+  function render() {
+    var q = state.query.trim().toLowerCase();
+    var shown = state.items.filter(function (item) {
+      if (state.filter !== "all" && item.tag !== state.filter) return false;
+      if (!q) return true;
+      var hay = (item.title + " " + item.summary + " " + item.source + " " + (item.set_numbers || []).join(" ")).toLowerCase();
+      return hay.indexOf(q) !== -1;
+    });
+
+    listEl.textContent = "";
+    countEl.textContent = shown.length + (shown.length === 1 ? " result" : " results");
+
+    if (!shown.length) {
+      listEl.appendChild(el("div", "empty", "Nothing matches that yet."));
+      return;
+    }
+
+    shown.forEach(function (item) {
+      var card = el("article", "item");
+
+      var meta = el("div", "meta");
+      meta.appendChild(el("span", "tag " + item.tag, item.tag));
+      if (isNew(item)) meta.appendChild(el("span", "new", "NEW"));
+      meta.appendChild(el("span", "", item.source));
+      meta.appendChild(el("span", "", "·"));
+      meta.appendChild(el("span", "", ago(item.published)));
+      card.appendChild(meta);
+
+      var h = el("h2");
+      var a = el("a", "", item.title);
+      a.href = safeUrl(item.url);
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      h.appendChild(a);
+      card.appendChild(h);
+
+      if (item.summary) card.appendChild(el("p", "", item.summary));
+
+      if (item.set_numbers && item.set_numbers.length) {
+        var sets = el("div", "sets");
+        item.set_numbers.forEach(function (n) { sets.appendChild(el("span", "set", n)); });
+        card.appendChild(sets);
+      }
+
+      listEl.appendChild(card);
+    });
+  }
+
+  document.getElementById("chips").addEventListener("click", function (e) {
+    var btn = e.target.closest(".chip");
+    if (!btn) return;
+    state.filter = btn.getAttribute("data-filter");
+    Array.prototype.forEach.call(this.children, function (c) {
+      c.setAttribute("aria-pressed", c === btn ? "true" : "false");
+    });
+    render();
+  });
+
+  document.getElementById("search").addEventListener("input", function (e) {
+    state.query = e.target.value;
+    render();
+  });
+
+  fetch("data/leaks.json?t=" + Date.now())
+    .then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      state.items = (data.items || []).slice().sort(function (a, b) {
+        return new Date(b.published) - new Date(a.published);
+      });
+      updatedEl.textContent = data.updated ? "Last checked " + ago(data.updated) : "";
+      render();
+    })
+    .catch(function (err) {
+      updatedEl.textContent = "";
+      listEl.appendChild(el("div", "error", "Couldn't load the leak list (" + err.message + "). If you opened this file straight from your computer, host it on GitHub Pages or run: python -m http.server"));
+    });
+})();
+</script>
+</body>
+</html>

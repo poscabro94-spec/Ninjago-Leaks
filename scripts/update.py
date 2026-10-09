@@ -9,6 +9,8 @@ GitHub Actions runs it automatically (see .github/workflows/update.yml).
 import json
 import re
 import sys
+import time
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
@@ -39,14 +41,32 @@ SOURCES = [
     },
     {
         "name": "Brick Fanatics",
-        "url": "https://www.brickfanatics.com/tag/ninjago/feed/",
+        "url": "https://www.brickfanatics.com/feed/",
         "tag": "news",
         "filter": True,
     },
     {
         "name": "Brickset",
-        "url": "https://brickset.com/article/rss",
+        "url": "https://brickset.com/feed",
         "tag": "official",
+        "filter": True,
+    },
+    {
+        "name": "r/ninjago",
+        "url": "https://www.reddit.com/r/ninjago/search.rss?q=leak+OR+leaked+OR+rumor+OR+rumour&restrict_sr=1&sort=new",
+        "tag": "rumour",
+        "filter": False,
+    },
+    {
+        "name": "Promobricks",
+        "url": "https://promobricks.de/feed/",
+        "tag": "news",
+        "filter": True,
+    },
+    {
+        "name": "Jay's Brick Blog",
+        "url": "https://jaysbrickblog.com/feed/",
+        "tag": "news",
         "filter": True,
     },
     {
@@ -66,8 +86,16 @@ USER_AGENT = "ninjago-leaks-page/1.0 (personal hobby project)"
 
 def fetch(url):
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=25) as resp:
-        return resp.read()
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=25) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as exc:
+            # "Too many requests": wait a bit and try again
+            if exc.code == 429 and attempt < 2:
+                time.sleep(8 * (attempt + 1))
+                continue
+            raise
 
 
 def clean(text):
@@ -144,7 +172,7 @@ def decide_tag(source, title, summary):
     if source["tag"] in ("rumour", "official"):
         return source["tag"]
     # news sites: look at the headline wording
-    if re.search(r"rumou?r|leak", title, re.I):
+    if re.search(r"rumou?r|leak|gerücht|gerucht", title, re.I):
         return "rumour"
     if OFFICIAL_WORDS.search(title):
         return "official"
@@ -167,6 +195,7 @@ def main():
     report = []
 
     for source in SOURCES:
+        time.sleep(2)  # be polite to the sites
         try:
             parsed = parse_feed(fetch(source["url"]))
         except Exception as exc:  # one broken source must not stop the others
